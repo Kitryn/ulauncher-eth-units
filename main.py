@@ -1,9 +1,19 @@
+import decimal
+
 from ulauncher.api.client.Extension import Extension
 from ulauncher.api.client.EventListener import EventListener
 from ulauncher.api.shared.action.CopyToClipboardAction import CopyToClipboardAction
 from ulauncher.api.shared.event import KeywordQueryEvent
 from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
 from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
+
+ctx = decimal.Context()
+ctx.prec = 18
+
+
+def float_to_str(f):
+    d1 = ctx.create_decimal(repr(f))
+    return format(d1, 'f')
 
 
 class EthUnitsExtension(Extension):
@@ -14,7 +24,7 @@ class EthUnitsExtension(Extension):
 
 def convert(vtype, val):
     if vtype == "wei":
-        return val
+        return int(val)
     elif vtype == "gwei":
         return int(val * 1e9)
     elif vtype == "ether":
@@ -31,16 +41,16 @@ def format_results(val):
             icon="eth.png",
         ),
         ExtensionResultItem(
-            name=str(val / 1e9),
+            name=float_to_str(val / 1e9),
             description="gwei",
-            on_enter=CopyToClipboardAction(str(val / 1e9)),
+            on_enter=CopyToClipboardAction(float_to_str(val / 1e9)),
             highlightable=False,
             icon="eth.png",
         ),
         ExtensionResultItem(
-            name=str(val / 1e18),
+            name=float_to_str(val / 1e18),
             description="ether",
-            on_enter=CopyToClipboardAction(str(val / 1e18)),
+            on_enter=CopyToClipboardAction(float_to_str(val / 1e18)),
             highlightable=False,
             icon="eth.png",
         )
