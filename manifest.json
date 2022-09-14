@@ -1,8 +1,8 @@
 {
   "required_api_version": "^2.0.0",
-  "name": "Eth Tools",
-  "description": "Eth Tools",
-  "developer_name": "Eth Tools",
+  "name": "Eth Units",
+  "description": "Eth Units",
+  "developer_name": "Eth Units",
   "options": {},
   "preferences": [
     {

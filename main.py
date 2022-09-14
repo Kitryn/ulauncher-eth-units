@@ -6,7 +6,7 @@ from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
 from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
 
 
-class EthToolsExtension(Extension):
+class EthUnitsExtension(Extension):
     def __init__(self):
         super().__init__()
         self.subscribe(KeywordQueryEvent, KeywordQueryEventListener())
@@ -60,4 +60,4 @@ class KeywordQueryEventListener(EventListener):
 
 
 if __name__ == '__main__':
-    EthToolsExtension().run()
+    EthUnitsExtension().run()
