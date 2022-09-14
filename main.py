@@ -27,19 +27,22 @@ def format_results(val):
             name=str(val),
             description="wei",
             on_enter=CopyToClipboardAction(str(val)),
-            highlightable=False
+            highlightable=False,
+            icon="eth.png",
         ),
         ExtensionResultItem(
             name=str(val / 1e9),
             description="gwei",
             on_enter=CopyToClipboardAction(str(val / 1e9)),
-            highlightable=False
+            highlightable=False,
+            icon="eth.png",
         ),
         ExtensionResultItem(
             name=str(val / 1e18),
             description="ether",
             on_enter=CopyToClipboardAction(str(val / 1e18)),
-            highlightable=False
+            highlightable=False,
+            icon="eth.png",
         )
     ]
 
