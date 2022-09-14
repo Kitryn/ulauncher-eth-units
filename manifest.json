@@ -1,0 +1,27 @@
+{
+  "required_api_version": "^2.0.0",
+  "name": "Eth Tools",
+  "description": "Eth Tools",
+  "developer_name": "Eth Tools",
+  "options": {},
+  "preferences": [
+    {
+      "id": "wei",
+      "type": "keyword",
+      "name": "From Wei",
+      "default_value": "wei"
+    },
+    {
+      "id": "gwei",
+      "type": "keyword",
+      "name": "From Gwei",
+      "default_value": "gwei"
+    },
+    {
+      "id": "ether",
+      "type": "keyword",
+      "name": "From Eth",
+      "default_value": "ether"
+    }
+  ]
+}
